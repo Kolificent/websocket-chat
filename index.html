@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <div class="loader visible" id="loader"></div>
+    <main class="container main-container" id="main-container">
+      <div class="controls">
+        <button
+          class="button__main"
+          type="button"
+          id="button-settings"
+        >
+          Настройки
+        </button>
+        <button class="button__main" id="quit-button">Выйти</button>
+      </div>
+      <div class="messages-wrapper" id="messages-wrapper">
+        <ul class="messages" id="messages"></ul>
+        <button class="button__main scroll-button" id="scroll-button"><i class='bx bx-down-arrow-alt'></i></button>
+      </div>
+      
+      <div>
+        <form class="form" id="form-message">
+          <input id="message-input" class="form__input" placeholder="сообщение..." required></input>
+          <button class="button__main">
+            <i class="bx bx-right-arrow-alt"></i>
+          </button>
+        </form>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div id="settings-window" class="modal">
+        <div class="container modal__content">
+          <div class="modal__header">
+            <span>Настройки</span>
+            <button class="button__close" id="close-settings-button">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="user-info">
+            <div><span>Текущий email: </span><span id="current-email"></span></div>
+            <div><span>Имя в чате: </span><span id="current-name"></span></div></div>
+            
+          
+          <form class="form__modal" id="form-name">
+            <input type="text" placeholder="Стив" class="input" id="name-input"  required/>
+            <button type="submit" class="button__main" id="set-name-button">
+              <i class="bx bx-right-arrow-alt"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div id="auth-window" class="modal">
+        <div class="container modal__content">
+          <div class="modal__header">
+            <span>Авторизация</span>
+          </div>
+          <span>Почта</span>
+          <form class="form__modal" id="form-email">
+            <input type="text" placeholder="" class="input" id="email-input"  required/>
+            <button type="submit" class="button__main" id="get-token-button">
+              <i>Получить код</i>
+            </button>
+          </form>
+          <span id="token-status"></span>
+          <button type="button" class="button__main" id="input-token-button">
+            <i>Ввести код</i>
+          </button>
+        </div>
+      </div>
+      <div id="token-window" class="modal">
+        <div class="container modal__content">
+          <div class="settings__header">
+            <span>Подтверждение</span>
+          </div>
+          <span>Код</span>
+          <form class="form__modal" id="form-token">
+            <input type="text" placeholder="" class="input" id="token-input" required/>
+            <button type="submit" class="button__main" id="login-button">
+              <i>Войти</i>
+            </button>
+          </form>
+        </div>
+      </div>
+    <div class="error-status" id="error-status"></div>
+    </main>
+    <template id="message">
+      <li class="message message-sent">
+        <span class="message-user"></span>
+        <p></p>
+        <span class="message-time">18:45</span>
+      </li>
+    </template>
+    <script type="module" src="src/index.ts"></script>
+  </body>
+</html>
