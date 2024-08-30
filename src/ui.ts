@@ -5,7 +5,6 @@ import { isScrollUpperLimit, scrollToBottom } from './scroll';
 import { formatDate } from './utils';
 import { messageClasses } from './constants';
 
-// todo вынести в константы классы
 export function togglePopupVisibility(
   isVisible: boolean,
   windowElement: HTMLElement | null,

@@ -5,8 +5,6 @@ import { Message, User } from './interfaces';
 
 const API_URL = process.env.API_URL;
 
-// TODO попробовать затестить axios
-
 export async function sendToken(email: string) {
   const body = stringifyValueByName('email', email);
   if (!body) return;

@@ -26,7 +26,6 @@ main.scrollButton?.addEventListener('click', scrollToBottom);
 
 window.addEventListener('DOMContentLoaded', initializeChat);
 
-// ? мб есть способ лучше, но я не нашёл
 let chatSocket: WebSocket | null = null;
 let chatHistory: Array<Message> | null = null;
 let loadedMessagesCount = 0;
